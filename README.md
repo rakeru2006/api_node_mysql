@@ -107,7 +107,7 @@ Demo aplication
 
 Demo running
 
-![demo](https://github.com/rakeru2006/express_heroku/blob/main/note.png)
+![demo](https://github.com/rakeru2006/api_node_mysql/blob/main/node.png)
 
 
 
