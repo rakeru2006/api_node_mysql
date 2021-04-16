@@ -1,5 +1,6 @@
 
 
+
 # :sparkles: Unit 12 Project Title  api_node_mysql   :sparkles:
 ================
 ## Author :bowtie:
@@ -80,10 +81,75 @@ Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cl
 
 ```
  npm install
- npm i express
- npm init
- node server.js
+ npm i console-table-printer figlet inquirer mysql
+ node app.js
+
 ``` 
+
+Be shure to modyfy your password and database
+```
+var connection = mysql.createConnection({
+    host: "localhost",
+  
+    // Your port; if not 3306
+    port: 3306,
+  
+    // Your username
+    user: "root",
+  
+    // Your password
+    password: "YourPassword",
+    database: "NameDatabaseemploy"
+  });
+  ```
+  
+  Be shure to create the DB in MySQL 
+  
+  ```
+  
+  DROP DATABASE IF EXISTS employees_db;
+CREATE DATABASE employees_db;
+
+USE employees_db;
+
+CREATE TABLE department (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE role (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(50) NOT NULL,
+  salary DECIMAL(10,2) NOT NULL,
+  department_id INT, 
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE employee (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR (50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  role_id INT NOT NULL, 
+  manager_id INT, 
+  PRIMARY KEY (id)
+);
+
+INSERT INTO department (name)
+VALUES ("Manager"), ("Engineering");
+
+INSERT INTO role (title, salary, department_id)
+VALUES ("Boss", "150000", "1"), ("Computation", "75000", "2");
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Mario", "Bros", "1", "1"), ("Luigy", "Green", "2", "2");
+  ```
+  
+
+  To run the aplication in console run 
+    ```
+   node app.js
+    ```
 ## Running Locally
 
 How do you deliver this? Here are some guidelines:
@@ -128,4 +194,3 @@ For questions contact
 
  
     
-
