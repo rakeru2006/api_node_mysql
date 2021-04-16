@@ -80,10 +80,31 @@ Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cl
 
 ```
  npm install
- npm i express
- npm init
- node server.js
+ npm i console-table-printer figlet inquirer mysql
+ node app.js
+
 ``` 
+
+Be shure to modyfy your password and database
+```
+var connection = mysql.createConnection({
+    host: "localhost",
+  
+    // Your port; if not 3306
+    port: 3306,
+  
+    // Your username
+    user: "root",
+  
+    // Your password
+    password: "YourPassword",
+    database: "NameDatabaseemploy"
+  });
+  ```
+  To run the aplication in console run 
+    ```
+   node app.js
+    ```
 ## Running Locally
 
 How do you deliver this? Here are some guidelines:
