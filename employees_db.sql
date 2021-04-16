@@ -27,10 +27,10 @@ CREATE TABLE employee (
 );
 
 INSERT INTO department (name)
-VALUES ("Sales"), ("Engineering"), ("Human Resources"), ("Legal"), ("Finance"), ("Artist");
+VALUES ("Manager"), ("Engineering");
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Manager", "800000", "7"), ("Coding Developer", "50000", "2"), ("Lawyer", "90000", "3"), ("Lawyer", "60000", "4"), ("Enginer", "60000", "5"), ("Artist", "70000", "6"), ("Salesperson", "40000", "1");
+VALUES ("Boss", "150000", "1"), ("Computation", "75000", "2");
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Maria", "Magdalena", "1"), ("Eion", "Musck", "2", "1"), ("Rodolfo", "Red", "3", "1"), ("Thomas", "Blacksmith", "4", "3"), ("Juan", "Salazar", "5", "1"), ("Tomas", "Hernandez", "Artist", "6", "1"), ("Jose", "Baltasar", "1", "1");
+VALUES ("Mario", "Bros", "1", "1"), ("Luigy", "Green", "2", "2");
