@@ -1,25 +1,36 @@
--- be carrefull using drop database because erase everithing --
--- CREATE DATABASE IF NOT EXIST company;   -- 
-DROP DATABASE IF EXISTS company;
-CREATE DATABASE company;
-USE company;
+DROP DATABASE IF EXISTS employees_db;
+CREATE DATABASE employees_db;
 
-CREATE TABLE employees(
-  id INTEGER AUTO_INCREMENT NOT NULL ,
-  name VARCHAR(50) DEFAULT NULL,
-  salary INTEGER DEFAULT NULL,
+USE employees_db;
+
+CREATE TABLE department (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
   PRIMARY KEY (id)
- 
 );
 
-DESCRIBE employees;
+CREATE TABLE role (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(100) NOT NULL,
+  salary DECIMAL(10,2) NOT NULL,
+  department_id INT, 
+  PRIMARY KEY (id)
+);
 
+CREATE TABLE employee (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR (100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
+  role_id INT NOT NULL, 
+  manager_id INT, 
+  PRIMARY KEY (id)
+);
 
--- test add elements in the DB -- 
--- INSERT INTO employees (name,salary) values ('Jane', 2000); --
-INSERT INTO employees  values 
-(1,' Rake Cgdsd ', 20000),
-(2,' Fer Astro ', 40000),
-(3,' Diana Teas ', 70000);
-  select * From employees;   
+INSERT INTO department (name)
+VALUES ("Manager"), ("Engineering");
 
+INSERT INTO role (title, salary, department_id)
+VALUES ("Boss", "150000", "1"), ("Computation", "75000", "2");
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Mario", "Bros", "1", "1"), ("Luigy", "Green", "2", "2");

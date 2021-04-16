@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/rakeru2006/api_node_mysql#readme",
   "dependencies": {
-    "console-table-printer": "^2.7.5",
+    "console-table-printer": "^2.8.2",
     "express": "^4.17.1",
     "figlet": "^1.5.0",
     "inquirer": "^7.3.3",
